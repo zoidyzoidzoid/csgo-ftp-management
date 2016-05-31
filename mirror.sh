@@ -1,6 +1,10 @@
 #!/bin/bash
 set -efu
 
-_common_configure.sh
+# shellcheck source=_common_configure.sh
+source _common_configure.sh
 
-for i in $(cat servers.txt); do wget -N -r -l inf "ftp://$USERNAME@$i" --password="$PASSWORD" -A "*.cfg"; done
+while read -r line
+do
+    wget -N -r -l inf "ftp://$USERNAME@$line" --password="$PASSWORD" -A "*.cfg"
+done < servers.txt

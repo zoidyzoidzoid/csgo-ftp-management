@@ -1,7 +1,8 @@
 #!/bin/bash
 set -efu
 
-_common_configure.sh
+# shellcheck source=_common_configure.sh
+source _common_configure.sh
 
 for i in $(git ls -m)
 do

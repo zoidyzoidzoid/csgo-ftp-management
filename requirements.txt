@@ -1,4 +1,4 @@
-Jinja2==2.10
+Jinja2==2.11.3
 jinja2-cli==0.6.0
 MarkupSafe==1.1.0
 PyYAML==3.13
